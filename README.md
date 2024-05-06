@@ -17,7 +17,9 @@ CUDA_VISIBLE_DEVICES=0 python -m torch.distributed.launch --nnodes 1 --nproc_per
 ```shell
 python testf.py --config configs/exp.yaml --model save/_exp/model_epoch_best.pth --runcode chen512_35ep
 ```
-2. Perform mask refinement with morphology transformation and evaluate the final output: SAMA_hovernet_test.ipynb
+2. Perform mask refinement with morphology transformation and evaluate the final output: SAMA_hovernet_test.ipynb \
+
+Download trained [checkpoint](https://wakehealth-my.sharepoint.com/:u:/r/personal/mgurcan_wakehealth_edu/Documents/cialab/sam-adapter-tumor-bud/model_epoch_epoch_35.pth?csf=1&web=1&e=h51GYI).
 
 ## Acknowledgements
 The part of the code is derived from Explicit Visual Prompt   <a href='https://nifangbaage.github.io/Explicit-Visual-Prompt/'><img src='https://img.shields.io/badge/Project-Page-Green'></a> by 
