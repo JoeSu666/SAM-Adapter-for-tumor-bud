@@ -1,6 +1,8 @@
 # Adapting SAM to histopathology images for tumor bud segmentation in colorectal cancer
 SPIE Medical Imaging 2024 [Paper](https://www.spiedigitallibrary.org/conference-proceedings-of-spie/12933/129330C/Adapting-SAM-to-histopathology-images-for-tumor-bud-segmentation-in/10.1117/12.3006517.full)
 
+Before running, create `load` folder for saving data and `save` folder for saving logs.
+
 ## Train
 ```shell
 CUDA_VISIBLE_DEVICES=0 python -m torch.distributed.launch --nnodes 1 --nproc_per_node 1 train.py --config configs/exp.yaml
@@ -17,7 +19,7 @@ CUDA_VISIBLE_DEVICES=0 python -m torch.distributed.launch --nnodes 1 --nproc_per
 ```shell
 python testf.py --config configs/exp.yaml --model save/_exp/model_epoch_best.pth --runcode chen512_35ep
 ```
-2. Perform mask refinement with morphology transformation and evaluate the final output: SAMA_hovernet_test.ipynb \
+2. Perform mask refinement with morphology transformation and evaluate the final output: SAMA_hovernet_test.ipynb
 
 Download trained [checkpoint](https://wakehealth-my.sharepoint.com/:u:/r/personal/mgurcan_wakehealth_edu/Documents/cialab/sam-adapter-tumor-bud/model_epoch_epoch_35.pth?csf=1&web=1&e=h51GYI).
 
